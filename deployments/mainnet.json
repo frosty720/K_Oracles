@@ -1,0 +1,57 @@
+{
+  "network": "mainnet",
+  "chainId": 3888,
+  "deployer": "0xC3878e88AFc26b7e223a8acEb78ecf8ba8900b9E",
+  "timestamp": "2025-12-15T16:44:24.639Z",
+  "gasUsed": "TBD",
+  "contracts": {
+    "KUSDOracleFactory": {
+      "address": "0x3775a8585f241Eb32b7D32bE08Ee3fda1d093f69",
+      "constructorArgs": []
+    },
+    "oracles": {
+      "BTC": {
+        "address": "0x28f51A114Ffcf36FB77D6ded40807a6415782f5d",
+        "asset": "BTC",
+        "constructorArgs": [
+          "0x4254430000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "ETH": {
+        "address": "0x80E64f28656e1C95F4dF231536D8dC411822053c",
+        "asset": "ETH",
+        "constructorArgs": [
+          "0x4554480000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "USDT": {
+        "address": "0xC5342aDDbecabF78d92Ca3c218879d4F767a0D30",
+        "asset": "USDT",
+        "constructorArgs": [
+          "0x5553445400000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "USDC": {
+        "address": "0xF89dE104147bb36f5473c30eC1d2C067c81ff04E",
+        "asset": "USDC",
+        "constructorArgs": [
+          "0x5553444300000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "DAI": {
+        "address": "0x7Ef8fe406191CB2a7C2671FF724f2eAbCbbd22cF",
+        "asset": "DAI",
+        "constructorArgs": [
+          "0x4441490000000000000000000000000000000000000000000000000000000000"
+        ]
+      }
+    }
+  },
+  "assets": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "USDC",
+    "DAI"
+  ]
+}
