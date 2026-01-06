@@ -15,14 +15,21 @@ if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir, { recursive: true });
 }
 
+// Determine network from environment
+const network = process.env.NETWORK || 'mainnet';
+const isTestnet = network === 'testnet';
+
 // Configuration
 const config = {
     // Node identification
     nodeId: process.env.ORACLE_NODE_ID || 'kusd-oracle-node-1',
 
-    // Blockchain configuration
-    rpcUrl: process.env.KALYCHAIN_MAINNET_RPC || 'https://rpc.kalychain.io/rpc',
+    // Blockchain configuration - use testnet or mainnet based on NETWORK env
+    rpcUrl: isTestnet
+        ? (process.env.KALYCHAIN_TESTNET_RPC || 'https://testnetrpc.kalychain.io/rpc')
+        : (process.env.KALYCHAIN_MAINNET_RPC || 'https://rpc.kalychain.io/rpc'),
     privateKey: process.env.PRIVATE_KEY,
+    network: network,
 
     // Oracle contract addresses
     oracleAddresses: {
@@ -104,7 +111,8 @@ function validateConfig() {
 async function main() {
     console.log('🔮 KUSD Oracle Node Starting...');
     console.log(`Node ID: ${config.nodeId}`);
-    console.log(`Network: ${config.rpcUrl}`);
+    console.log(`Network: ${config.network.toUpperCase()}`);
+    console.log(`RPC URL: ${config.rpcUrl}`);
     console.log(`Assets: ${config.assets.join(', ')}`);
 
     // Validate configuration

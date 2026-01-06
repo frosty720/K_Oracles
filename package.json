@@ -5,7 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
+    "start:testnet": "NETWORK=testnet node src/index.js",
+    "start:mainnet": "NETWORK=mainnet node src/index.js",
     "dev": "nodemon src/index.js",
+    "dev:testnet": "NETWORK=testnet nodemon src/index.js",
     "test": "jest",
     "test:prices": "node src/utils/PriceMonitor.js test",
     "test:prices:all": "node src/utils/PriceMonitor.js all",
